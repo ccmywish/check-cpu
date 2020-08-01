@@ -1,10 +1,11 @@
 require 'sinatra'
 
 get '/' do
-    "hello from sinatra webrick, try /cpu and see "
+    code = "hello from sinatra webrick, click the button to see cpu exhaustion   <button onclick=\"location='/cpu'\">exhaust cpu</button> "
+    erb code
 end
 
 get '/cpu' do
-    system 'bash cpu.sh'
+    spawn'bash cpu.sh'
     "cpu usage will be 100% "
 end
