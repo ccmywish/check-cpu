@@ -1,6 +1,7 @@
 require 'sinatra'
 
 configure do
+  # 该设置会掩盖命令行的-p
   # set :port, 80
   set :port, 8080
 end
