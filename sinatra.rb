@@ -1,5 +1,10 @@
 require 'sinatra'
 
+configure do
+  # set :port, 80
+  set :port, 8080
+end
+
 get '/' do
   code = "
   <h1>Hello Sinatra</h1>
