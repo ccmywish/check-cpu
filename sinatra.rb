@@ -12,7 +12,7 @@ get '/' do
   <p>点击右侧按钮开始耗尽cpu <button onclick=\"location='/cpu'\">exhaust cpu</button></p>
   <p>点击右侧按钮解除cpu占用 <button onclick=\"location='/rcpu'\">release cpu</button></p>
   <p>点击右侧按钮查看cpu占用情况 <button onclick=\"location='/catcpu'\">cat cpu</button></p>
-  <p><a href=\"https://github.com/ccmywish/wc\" target=\"_blank\" style=\"text-decoration:none;color:#090\">点击查看源代码</a></p>
+  <p><a href=\"https://github.com/ccmywish/check-cpu\" target=\"_blank\" style=\"text-decoration:none;color:#090\">点击查看源代码</a></p>
   "
   erb code
 end
