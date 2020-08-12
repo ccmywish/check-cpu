@@ -10,6 +10,7 @@ get '/' do
   code = "
   <h1>Hello Sinatra</h1>
   <p>点击右侧按钮开始耗尽cpu <button onclick=\"location='/cpu'\">exhaust cpu</button></p>
+  <p>点击右侧按钮解除cpu占用 <button onclick=\"location='/rcpu'\">release cpu</button></p>
   <p>点击右侧按钮查看cpu占用情况 <button onclick=\"location='/catcpu'\">cat cpu</button></p>
   <p><a href=\"https://github.com/ccmywish/wc\" target=\"_blank\" style=\"text-decoration:none;color:#090\">点击查看源代码</a></p>
   "
@@ -47,6 +48,7 @@ get '/catcpu' do
   # puts catcpu
   @maxcpucmd = catcpu[1]
   @maxcpu  = catcpu[0]
+  puts "占用最大cpu的命令为为#{@maxcpucmd},占用率为#{@maxcpu}"
   code = "
 
   <h1>查看cpu占用最多的命令，以及它的cpu占用率</h1>

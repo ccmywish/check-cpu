@@ -27,9 +27,11 @@ services:
   #     - WORDPRESS_DB_NAME=wordpress
 
   sinatra:
-    container_name: wordpress-sinatra
+    container_name: check-cpu
     build: .
     command: 'ruby sinatra.rb'
+    volumes:
+      - .:/myapp
     ports:
       - 80:80
     restart: always
