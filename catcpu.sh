@@ -1,5 +1,9 @@
 #!/bin/bash
-# ps auxw|head -1;ps auxw|sort -rn -k3|head -1
 
-# cpu
-ps aux | grep 'dd if' | awk 'NR==1 {print $3}'
+maxcpu=$(ps auxw|sort -rn -k3|head -1 | awk 'NR==1 {print $3}')
+maxcpucmd=$(ps auxw|sort -rn -k3|head -1 | awk 'NR==1 {print $11}')
+
+echo ${maxcpu}
+echo ${maxcpucmd}
+
+
