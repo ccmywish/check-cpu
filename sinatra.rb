@@ -2,8 +2,8 @@ require 'sinatra'
 
 configure do
   # 该设置会掩盖命令行的-p
-  # set :port, 80
-  set :port, 8080
+  set :port, 80
+  # set :port, 8080
 end
 
 get '/' do
@@ -17,7 +17,7 @@ get '/' do
 end
 
 get '/cpu' do
-  # spawn'bash cpu.sh'
+  spawn 'bash cpu.sh'
   code = "
 
   <h1>cpu占用率即将到达100%</h1>
@@ -30,7 +30,7 @@ get '/cpu' do
 end
 
 get '/rcpu' do
-   # spawn'bash rcpu.sh'
+   spawn 'bash rcpu.sh'
   code = "
 
   <h1>cpu占用率正在释放中</h1>
@@ -44,7 +44,7 @@ end
 get '/catcpu' do
   catcpu = `bash ./catcpu.sh`
   catcpu = catcpu.split(" ")
-  puts catcpu
+  # puts catcpu
   @maxcpucmd = catcpu[1]
   @maxcpu  = catcpu[0]
   code = "
